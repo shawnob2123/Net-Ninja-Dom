@@ -1,0 +1,17 @@
+//filter books
+const searchBar = document.forms['search-books'].querySelector('#input');
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase() //input field grabbed, getting the value
+    const books = list.getElementByTagName('li');
+    Array.from(books).forEach(function(book){
+        const title = book.firstElementChild.textContent; //title of the book
+
+        if (title.toLowerCase().indexOf(term)!= -1) {//returns value of index
+        book.style.display = 'block';
+        }else{
+            book.style.display = 'none';
+        }
+
+    })
+
+});
