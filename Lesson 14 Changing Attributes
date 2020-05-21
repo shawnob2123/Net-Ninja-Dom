@@ -1,0 +1,13 @@
+//Inside the dom only
+let book = document.querySelector('li:first-child.name')
+
+book.getAttribute('class');
+//return "name"
+
+//change attribute
+book.setAttribute('class', 'name-2');
+
+book.hasAttribute('class')//return true
+book.hasAttribute('href') //return false
+
+book.removeAttribute('class') //remove attribute
