@@ -1,0 +1,10 @@
+// DOM Nodes
+
+const banner = document.querySelector('#page-banner');
+
+console.log('#page-banner node type is:' banner.nodeType); //
+console.log('#page-banner node name is:' banner.nodeName); // return element name (this case its a Div)
+console.log('#page-banner has child nodes:' banner.hasChildNodes()); // returns True or False if theres Child nodes
+
+const clonedBanner = banner.cloneNode(true) // pass true to go deep in the node
+console.log(clonedBanner);
