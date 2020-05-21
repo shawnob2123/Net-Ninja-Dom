@@ -1,0 +1,27 @@
+// Events
+
+let h2 = document.querySelector('#book-list h2')
+
+h2.addEventListener('click', function(e) {
+    console.log(e.target); //target is  a property on the event object
+    console.log(e);
+
+})
+
+let btns = document.querySelectorAll('#book-list.delete') //collection of events, not just one
+
+Array.from(btns).forEach(function(btn) {
+    btn.addEventListener('click', function(e){
+
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(li) 
+
+    });
+
+});
+
+const link = document.querySelector('#page-banner a');
+link.addEventListener('click', function(e){
+    e.preventDefault(); //prevent default action from occuring which is naviagting the website
+    console.log('naviagtion to', e.target.textContent) //e.target is the link //text content is the words in the <a> tag
+});
