@@ -1,0 +1,10 @@
+// Event Bubbling
+
+//delete books
+const list = document.querySelector('#book-list ul');
+list.addEventListener('click', function(e){
+    if (e.targer.className == 'delete')  {//return class name of the element
+    const li = e.target.parentElement;
+    list.removeChild(li); //removes listed items after delete click
+}
+});
