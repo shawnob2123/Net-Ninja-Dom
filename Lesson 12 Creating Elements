@@ -1,0 +1,18 @@
+  //create elements
+
+    const li = document.createElement('li');
+    const bookName = document.createElement('span');
+    const deleteBtn = document.createElement('span');
+
+    //add content
+    deleteBtn.textContent = 'delete';
+    bookName.textContent = value;
+    
+    //append to dom
+
+
+    li.appendChild(bookName) //add to the dom, grab li then append child to it which is book name
+    li.appendChild(deleteBtn) //order matters here
+    list.appendChild(li);
+
+});
