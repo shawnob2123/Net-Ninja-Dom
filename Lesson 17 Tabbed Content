@@ -1,0 +1,15 @@
+//tabbed content
+const tabs = document.querySelector('tabs');
+const panels = document.querySelectorAll('.panel');
+tabs.addEventListener(function(e){
+    if (e.target.targetName = 'LI') {
+        const targetPanel = document.querySelector(e.target.dataset); //data set looks for data attributes
+        panels.forEach(function(panel)) {
+            if (panel == targetPanel) {
+                panel.classList.add('active');
+            }else{
+                panel.classList.remove('active'); //grab reference to Ul's then panels
+            }
+        }
+    }
+});
