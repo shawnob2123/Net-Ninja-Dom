@@ -1,0 +1,3 @@
+    //add classes
+    bookName.classList.add('name'); //add class of name
+    deleteBtn.classList.add('delete'); //add class of delete
