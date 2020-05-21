@@ -1,0 +1,16 @@
+// Changing text & HTML content
+
+
+let books = document.querySelectorAll('#book-list li .name');
+
+Array.from(books).forEach(function(book){
+    // console.log(book.textContent); //grab text within defined element //books.TextContent grabs "book"
+
+    book.textContent += '(book title)'; //override text and appends book title //
+    //append to a string using +=
+
+});
+
+const bookList = document.querySelector('#book-list');
+// bookList.innerHTML = '<h2>Reading is fun!</h2>';
+bookList.innerHTML += '<p>Start here</p>';
