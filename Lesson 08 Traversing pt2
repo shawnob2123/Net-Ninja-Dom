@@ -1,0 +1,11 @@
+// Traversing the DOM pt 2
+
+const bookList = document.querySelector('#book-list');
+
+console.log('book list next sibling is:', bookList.nextSibling) //next sibling of the element
+console.log('book list next element sibling is:', bookList.nextElementSibling) // next element instead of node
+
+console.log('book list next sibling is:', bookList.previousSibling) //previous node
+console.log('book list next element sibling is:', bookList.previousElementSibling) //previous element
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/> Reading is cool'; //search header scope for p tag
