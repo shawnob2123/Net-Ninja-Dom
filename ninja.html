@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books o Fun</title>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/styles01.css">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="page-banner">
+                <h1 class = "title">Books For Startups!</h1>
+            <p>In order, read the following:</p>
+
+            <a href='Careerdevs.com'>Career Devs</a>
+            
+            <form id="search-books">
+                <input type="text" placeholder="Search books...">
+            </form>
+            </div>
+        </header>
+        <div id="book-list">
+            <h2 class="title">Books To Read</h2>
+            <ul>
+                <li>
+                    <span class="name">The Lean Startup</span>
+                    <span class="delete">delete</span>
+                </li>
+                <li>
+                    <span class="name">Zero to One</span>
+                    <span class="delete">delete</span>
+                </li>
+                <li>
+                    <span class="name">Good to Great</span>
+                    <span class="delete">delete</span>
+                </li>
+            </ul>
+        </div>
+        <form id="add-book">
+            <input type='checkbox' id='hide'>
+            <label for='hide'>Hide all books</label>
+            <input type="text" placeholder="Add a book...">
+            <button id='add'>Add</button>
+        </form>
+        <div id="tabbed-content">
+            <ul class="tabs">
+              <li data-target="#about" class="active">About</li>
+              <li data-target="#contact">Contact</li>
+            </ul>
+            <div class="panel active" id="about">
+              <p>Content for about tab...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+            </div>
+            <div class="panel" id="contact">
+              <p>Content for contact tab...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+            </div>
+          </div>
+    </div>
+    <script src="ninja.js"></script>
+</body>
+</html>

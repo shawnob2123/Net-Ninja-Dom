@@ -1,0 +1,39 @@
+body {background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+
+#player1Name {
+  color: red;
+  font-size: 2rem;
+  font-family: 'Roboto-Bold',  sans-serif;
+}
+
+#hitButtonClick {
+  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+  font-weight: bold;
+}
+
+#standButtonClick {
+  background-color: #FF9A8B;
+background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+font-weight: bold;
+}
+
+#dealerName {
+  color: blue;
+  font-size: 2rem;
+  font-family: 'Roboto-Bold', sans-serif;
+}
+
+#newGameButtonClick {
+  font-weight: bold;
+  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9 51%, #1D976C 100%)
+}
+
+#newGameButtonClick:hover { 
+  background-position: right center; }
+
+  h4 {
+    font-family: 'Oswald', sans-serif;
+  }
