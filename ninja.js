@@ -1,10 +1,13 @@
-document.addEventListener('DOMContenetLoaded', function(){
-//delete books
+document.addEventListener('DOMContentLoaded', function(){
+
 const list = document.querySelector('#book-list ul');
-list.addEventListener('click', function(e){
-    if (e.targer.className == 'delete')  {//return class name of the element
-    const li = e.target.parentElement;
-    list.removeChild(li); //removes listed items after delete click
+const forms = document.forms;
+
+//delete books
+list.addEventListener('click', (e) => {
+    if(e.target.className == 'delete'){
+      const li = e.target.parentElement;
+      li.parentNode.removeChild(li); //removes listed items after delete click
 }
 });
 
@@ -12,17 +15,19 @@ list.addEventListener('click', function(e){
 const addForm = document.forms['add-book'];
 addForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const value = addForm.querySelector('input[type='text']').value //specific type in brackets //grab value of input field
+        
+    const value = addForm.querySelector('input[type="text"]').value; //specific type in brackets //grab value of input field
+      //create elements
 
-    //create elements
-
-    const li = document.createElement('li');
-    const bookName = document.createElement('span');
-    const deleteBtn = document.createElement('span');
+      const li = document.createElement('li');
+      const bookName = document.createElement('span');
+      const deleteBtn = document.createElement('span');
+  
 
     //add content
-    deleteBtn.textContent = 'delete';
     bookName.textContent = value;
+    deleteBtn.textContent = 'delete';
+    
 
     //add classes
     bookName.classList.add('name'); //add class of name
@@ -38,68 +43,45 @@ addForm.addEventListener('submit', function(e){
 });
 
 
-//Inside the dom only
-let book = document.querySelector('li:first-child.name')
-
-book.getAttribute('class');
-//return "name"
-
-//change attribute
-book.setAttribute('class', 'name-2');
-
-book.hasAttribute('class')//return true
-book.hasAttribute('href') //return false
-
-book.removeAttribute('class') //remove attribute
-
-
 //hide books
 const hideBox = document.querySelector('#hide');
 hideBox.addEventListener('change', function(e){
-    if (hideBox.checked) { //return true if checked, false if unchecked
-    list.style.display = 'none';
-}else{
-    list.style.display = 'initial';
-
-}
+  if(hideBox.checked){
+    list.style.display = "none";
+  } else {
+    list.style.display = "initial";
+  }
 });
 
 //filter books
-const searchBar = document.forms['search-books'].querySelector('#input');
-searchBar.addEventListener('keyup', function(e){
-    const term = e.target.value.toLowerCase() //input field grabbed, getting the value
-    const books = list.getElementByTagName('li');
-    Array.from(books).forEach(function(book){
-        const title = book.firstElementChild.textContent; //title of the book
-
-        if (title.toLowerCase().indexOf(term)!= -1) {//returns value of index
-        book.style.display = 'block';
-        }else{
-            book.style.display = 'none';
-        }
-
-    })
-
+const searchBar = forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', (e) => {
+  const term = e.target.value.toLowerCase();
+  const books = list.getElementsByTagName('li');
+  Array.from(books).forEach((book) => {
+    const title = book.firstElementChild.textContent;
+    if(title.toLowerCase().indexOf(e.target.value) != -1){
+      book.style.display = 'block';
+    } else {
+      book.style.display = 'none';
+    }
+  });
 });
 
 //tabbed content
-const tabs = document.querySelector('tabs');
-const panels = document.querySelectorAll('.panel');
-tabs.addEventListener(function(e){
-    if (e.target.targetName = 'LI') {
-        const targetPanel = document.querySelector(e.target.dataset); //data set looks for data attributes
-        panels.forEach(function(panel)) {
-            if (panel == targetPanel) {
-                panel.classList.add('active');
-            }else{
-                panel.classList.remove('active'); //grab reference to Ul's then panels
-            }
+const tabs = document.querySelector('.tabs');
+  const panels = document.querySelectorAll('.panel');
+  tabs.addEventListener('click', (e) => {
+    if(e.target.tagName == 'LI'){
+      const targetPanel = document.querySelector(e.target.dataset.target);
+      Array.from(panels).forEach((panel) => {
+        if(panel == targetPanel){
+          panel.classList.add('active');
+        }else{
+          panel.classList.remove('active');
         }
+      });
     }
-});
-    
+  });
 
-
-
-});
-
+})
